@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import { mdxComponents } from "@/mdx-components";
+import Giscus from "@/components/Giscus.astro";
 import { ChevronLeft } from "lucide-react";
 
 export async function getStaticPaths() {
@@ -104,5 +105,6 @@ const jsonLd = JSON.stringify({
     >
       <Content components={mdxComponents} />
     </article>
+    <Giscus term={slug} lang={postLang} />
   </section>
 </Layout>
