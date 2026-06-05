@@ -69,7 +69,7 @@ export default function BlogList({ posts, allPostsCount, pagination, pageSize }:
                   <BlurFade delay={BLUR_FADE_DELAY * 3 + id * 0.05} key={post.id}>
                     <a
                       className="flex items-start gap-x-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                      href={`/blog/${post.id}`}
+                      href={`${import.meta.env.BASE_URL}blog/${post.id}`}
                     >
                       <span className="text-xs font-mono tabular-nums font-medium mt-[5px]">
                         {String(indexNumber).padStart(2, "0")}.
@@ -104,7 +104,7 @@ export default function BlogList({ posts, allPostsCount, pagination, pageSize }:
                 <div className="flex gap-2 sm:justify-end">
                   {pagination.hasPreviousPage ? (
                     <a
-                      href={`/blog?page=${pagination.page - 1}`}
+                      href={`${import.meta.env.BASE_URL}blog?page=${pagination.page - 1}`}
                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       {labels.previous}
@@ -116,7 +116,7 @@ export default function BlogList({ posts, allPostsCount, pagination, pageSize }:
                   )}
                   {pagination.hasNextPage ? (
                     <a
-                      href={`/blog?page=${pagination.page + 1}`}
+                      href={`${import.meta.env.BASE_URL}blog?page=${pagination.page + 1}`}
                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       {labels.next}

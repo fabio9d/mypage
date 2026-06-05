@@ -24,7 +24,7 @@ const allPosts = await getCollection("blog");
 const post = allPosts.find((p) => p.data.postId === postId && p.data.lang === currentLang);
 
 if (!post) {
-  return Astro.redirect("/blog");
+  return Astro.redirect(import.meta.env.BASE_URL + "blog");
 }
 
 const { title, publishedAt, summary, image, lang } = post.data;
@@ -66,7 +66,7 @@ const jsonLd = JSON.stringify({
     <script is:inline type="application/ld+json" set:html={jsonLd} />
     <div class="flex justify-start gap-4 items-center">
       <a
-        href="/blog"
+        href={import.meta.env.BASE_URL + "blog"}
         class="text-sm text-muted-foreground hover:text-foreground transition-colors border border-border rounded-lg px-2 py-1 inline-flex items-center gap-1 mb-6 group"
         aria-label={postLang === "pt" ? "Voltar para o blog" : "Back to blog"}
       >

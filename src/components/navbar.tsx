@@ -13,6 +13,7 @@ import { useLanguage } from "@/lib/language";
 export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
   const data = getResumeData(language);
+  const prefix = import.meta.env.BASE_URL;
   const labels = {
     language: language === "pt" ? "EN" : "PT",
   };
@@ -22,11 +23,12 @@ export default function Navbar() {
       <Dock className="z-50 pointer-events-auto relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
         {data.navbar.map((item) => {
           const isExternal = item.href.startsWith("http");
+          const href = isExternal ? item.href : prefix + item.href.slice(1);
           return (
             <Tooltip key={item.href}>
               <TooltipTrigger asChild>
                 <a
-                  href={item.href}
+                  href={href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
                 >
