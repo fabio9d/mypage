@@ -2,7 +2,7 @@
 
 # Starfolio
 
-**A modern, minimal Astro portfolio template** - built with Astro v6, React, Tailwind CSS v4, shadcn/ui, and MDX. Edit three files, deploy anywhere.
+**A modern, minimal Astro portfolio template** - built with Astro v6, React, Tailwind CSS v4, shadcn/ui, and MDX. Edit three files, deploy anywhere..
 
 [![Astro](https://img.shields.io/badge/Astro-v6-BC52EE?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
