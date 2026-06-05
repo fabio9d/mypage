@@ -6,6 +6,14 @@ import { formatDate } from "@/lib/utils";
 import { mdxComponents } from "@/mdx-components";
 import { ChevronLeft } from "lucide-react";
 
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+  return allPosts.map((post) => ({
+    params: { slug: String(post.data.postId) },
+    props: {},
+  }));
+}
+
 const slug = Astro.params.slug;
 const postId = Number(slug);
 
